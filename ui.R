@@ -4,5 +4,4 @@ ui <- fluidPage(
   user_selection_ui(id = "user_selection"),
   
   data_preview_ui(id = "data_preview")
-  
 )
