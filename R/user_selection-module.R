@@ -10,5 +10,5 @@ user_selection_ui <- function(id) {
 user_selection_server <- function(id) {
   moduleServer(id, function(input, output, session) {
     return(reactive(input$user_interest))
-    })
+  })
 }

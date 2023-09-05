@@ -15,35 +15,29 @@ cars_dataset <- cars
 # UI ===========================================================================
 
 ui <- fluidPage(
-  
   "A quick data preview app",
-  
   selectInput("user_interest", label = "What are you interested in?", choices = c("geographic", "vehicles")),
-  
   dataTableOutput("preview_dataset")
-  
 )
 
 # Server =======================================================================
 
-server <- function(input, output){
-  
+server <- function(input, output) {
   dataset_to_preview <- reactive({
     validate(
       need(input$user_interest, "Please selection an option")
     )
-    
-    if(input$user_interest == "vehicles"){
+
+    if (input$user_interest == "vehicles") {
       cars_dataset
     } else if (input$user_interest == "geographic") {
       lake_huron_dataset
     }
   })
-  
+
   output$preview_dataset <- DT::renderDataTable({
     dataset_to_preview()
   })
-  
 }
 
 # Run app ======================================================================
