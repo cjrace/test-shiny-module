@@ -13,9 +13,9 @@ data_preview_server <- function(id, user_selection){
   moduleServer(id = "data_preview", function(input, output, session) {
     
     dataset <- reactive({
-      if(user_selection == "vehicles"){
+      if(user_selection() == "vehicles"){
         return(cars_dataset)
-      } else if (user_selection == "geographic") {
+      } else if (user_selection() == "geographic") {
         return(lake_huron_dataset)
       } 
     }
