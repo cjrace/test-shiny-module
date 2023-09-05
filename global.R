@@ -10,4 +10,3 @@ lake_huron_dataset <- LakeHuron
 
 ## Vehicle data ----
 cars_dataset <- cars
-# cars_testing_dataset <- mtcars
